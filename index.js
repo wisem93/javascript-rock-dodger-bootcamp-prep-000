@@ -67,15 +67,14 @@ function checkCollision(rock) {
 }
 
 function createRock(x) {
-  const rock = document.createElement('div')
-
-  rock.className = 'rock'
-  rock.style.left = `${x}px`
+  const rock = document.createElement('div');
+  rock.className = 'rock';
+  rock.style.left = `${x}px`;
 
   // Hmmm, why would we have used `var` here?
   var top = 0;
 
-  rock.style.top = top
+  rock.style.top = top;
 
   /**
    * Now that we have a rock, we'll need to append
@@ -126,10 +125,10 @@ function createRock(x) {
 
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
-  ROCKS.push(rock)
+  ROCKS.push(rock);
 
   // Finally, return the rock element you've created
-  return rock
+  return rock;
 }
 
 /**
@@ -140,9 +139,8 @@ function createRock(x) {
  */
 function endGame() {
   clearInterval(gameInterval);
-  ROCKS.forEach(function(rock) {rock.remove()});
-  return alert('You lost Morty!');
   
+  ROCKS.forEach(function(rock) {rock.remove()});
 }
 
 function moveDodger(e) {
@@ -195,7 +193,7 @@ function moveDodgerRight() {
    */
    
    window.requestAnimationFrame(function(){
-     const left = positionToInteger(DODGER.style.left)
+     const left = positionToInteger(DODGER.style.left);
      
      if (left < 360) {
        DODGER.style.left = `${left + 4}px`;
